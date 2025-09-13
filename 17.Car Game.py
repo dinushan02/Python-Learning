@@ -1,0 +1,39 @@
+command = ""
+started = False  # False means car is off
+
+while True:
+    command = input("> ").lower()
+
+    if command == "start":
+        if started:
+            print("Car is already started!")
+        else:
+            started = True
+            print("Car started...Ready to go!")
+
+    elif command == "stop":
+        if not started:
+            print("Car is already stopped!")
+        else:
+            started = False
+            print("Car stopped.")
+
+    elif command == "status":
+        if started:
+            print("The car is currently started.")
+        else:
+            print("The car is currently stopped.")
+
+    elif command == "help":
+        print("""
+start  - to start the car
+stop   - to stop the car
+status - to check the car status
+quit   - to quit
+        """)
+
+    elif command == "quit":
+        break
+
+    else:
+        print("Sorry, I don't understand that")
